@@ -38,6 +38,8 @@ webpack自带
 
 ` config.optimization.splitChunks({})`  替代
 
+第七步，
+
 # 依赖
 
 ## babel 7.0以上版本
