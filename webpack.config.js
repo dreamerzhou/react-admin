@@ -9,6 +9,13 @@ module.exports = {
     publicPath: '/dist/',
     filename: 'js/app.js'
   },
+  resolve: {
+    alias: {
+      // 方便文件路径的变更，直接配置此处路径
+      page:         path.resolve(__dirname, 'src/page'),
+      components:   path.resolve(__dirname, 'src/components')
+    }
+  },
   module: {
     rules: [
       // react语法 配置
@@ -18,7 +25,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['env', '@babel/react']
+            presets: ['@babel/env', '@babel/react']
           }
         }
       },
@@ -69,15 +76,11 @@ module.exports = {
   plugins: [
     // 处理html文件
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      template: './src/index.html',
+      favicon: './favicon.ico'
     }),
     // 独立css文件
     new ExtractTextPlugin('css/[name].css'),
-    // 提取公共模块
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: 'common',
-    //   filename: 'js/base.js'
-    // })
   ],
   // 提取公共模块
   optimization: {
@@ -93,7 +96,10 @@ module.exports = {
     }
   },
   devServer: {
-    port: 8086
+    port: 8086,
+    historyApiFallback: {
+      index: '/dist/index.html'
+    }
   },
   mode: 'development'
 }
