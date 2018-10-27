@@ -365,7 +365,7 @@ footer p {
   position: relative;
   display: inline-block;
   margin: 0px;
-  padding: 0px;
+  padding-right: 40px;
 }
 .top-navbar .nav > li:hover .dropdown-menu {
   display: block;
@@ -434,8 +434,6 @@ footer p {
 
 .nav-second-level li,
 .nav-third-level li {
-  height: 50px;
-  line-height: 50px;
   border-bottom: none !important;
 }
 

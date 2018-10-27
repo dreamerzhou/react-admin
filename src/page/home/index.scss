@@ -1,0 +1,24 @@
+.color-box {
+  display: block;
+  height: 160px;
+  text-align: center;
+  padding: 20px 0;
+  opacity: .9;
+  transition: all .3s;
+  &:hover {
+    text-decoration: none;
+    color: #333;
+    opacity: 1;
+    transform: scale(1.06);
+  }
+  .count {
+    font-size: 28px;
+  }
+  .desc {
+    font-size: 18px;
+    .fa {
+      padding: 0 10px;
+    }
+  }
+  
+}

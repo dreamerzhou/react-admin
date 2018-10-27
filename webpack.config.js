@@ -13,7 +13,9 @@ module.exports = {
     alias: {
       // 方便文件路径的变更，直接配置此处路径
       page:         path.resolve(__dirname, 'src/page'),
-      components:   path.resolve(__dirname, 'src/components')
+      components:   path.resolve(__dirname, 'src/components'),
+      util:   path.resolve(__dirname, 'src/util'),
+      service:   path.resolve(__dirname, 'src/service')
     }
   },
   module: {
@@ -99,6 +101,16 @@ module.exports = {
     port: 8086,
     historyApiFallback: {
       index: '/dist/index.html'
+    },
+    proxy: {
+      '/manage': {
+        target: 'http://admintest.happymmall.com',
+        changeOrigin: true
+      },
+      '/user/logout.do': {
+        target: 'http://admintest.happymmall.com',
+        changeOrigin: true
+      }
     }
   },
   mode: 'development'

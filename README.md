@@ -49,9 +49,58 @@ webpack自带
 
 CDN引入 `bootstrap`  `font-awesome`
 
+引入boostrap皮肤
 `https://webthemez.com/demo/insight-free-bootstrap-html5-admin-template/ui-elements.html`
 
-第十步，
+第十步，CDN引入jQuery
+
+用于ajax请求
+
+第十一步，util文件 配置
+
+十二，登录
+
+登录功能实现，通过localStorage存储用户登录信息，管理登录状态
+
+本地存储功能封装，setStorage()、getStorage()、removeStorage()
+
+十三，首页数据渲染
+
+loadCount()   getHomeCount()
+
+十四，错误页面，首页问题
+
+page/error
+
+十五，UserLIst组件
+
+分页插件  `https://github.com/search?q=react+pagination`
+
+yarn add rc-pagination
+
+十六，指针问题
+
+MUtil组件中
+
+// 报错  调用 getUserList()
+$.ajax({
+  sucess() {
+
+  },
+  error() {
+
+  }
+})
+
+// 正常
+$.ajax({
+  sucess: (res) => {
+
+  },
+  error: (err) => {
+
+  }
+})
 
 # 依赖
 
@@ -75,7 +124,9 @@ webpack 3. 与 extract-text-webpack-plugin 3.
 
 webpack 4. 与 extract-text-webpack-plugin@next 4.0beta版
 
+# Login
 
+boostrap栅格布局左右滚动条问题  去掉行和列中的row
 
 `https://github.com/T-Macgrady/mmall-m`
 
