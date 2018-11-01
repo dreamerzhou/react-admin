@@ -37,8 +37,13 @@ class MUtil {
     return result ? decodeURIComponent(result[2]) : null;       
         
   }
+  // 成功提示
+  successTips(successMsg) {
+    alert(successMsg || '操作成功！');
+  }
+  // 错误提示
   errorTips(errMsg) {
-    alert(errMsg || '哥们儿，哪里不对了~')
+    alert(errMsg || '哥们儿，哪里不对了~');
   }
   // 存储  key = name，value = data
   setStorage(name, data) {

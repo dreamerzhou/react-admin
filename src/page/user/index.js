@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Title from 'components/title/index.js';
+import TableList from 'util/tablelist/index.js';
 import Pagination from 'util/pagination/index.js';
 
 import MUtil from 'util/mm.js';
@@ -15,8 +16,7 @@ class UserList extends React.Component {
     super(props);
     this.state = {
       pageNum: 1,
-      list: [],
-      firstLoading: true
+      list: []
     }
   }
   componentDidMount() {
@@ -24,11 +24,7 @@ class UserList extends React.Component {
   }
   loadUserList() {
     _user.getUserList(this.state.pageNum).then((res) => {
-      this.setState(res, () => {
-        this.setState({
-          firstLoading: false
-        });
-      });
+      this.setState(res);
     }, (errMsg) => {
       this.setState({
         list: []
@@ -67,24 +63,11 @@ class UserList extends React.Component {
     return (
       <div id="page-wrapper">
         <Title title="用户列表"/>
-        <div className="row">
-          <div className="col-md-12">
-            <table className="table table-striped table-bordered">
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>用户名</th>
-                  <th>邮箱</th>
-                  <th>电话</th>
-                  <th>注册时间</th>
-                </tr>
-              </thead>
-              <tbody>
-                {tableBody}
-              </tbody>
-            </table>
-          </div>
-        </div>
+        
+        <TableList tableHeads={['ID', '用户名', '邮箱', '电话', '注册时间']}>
+          {listBody}
+        </TableList>
+
         <Pagination current={this.state.pageNum}
           total={this.state.total}
           onChange={(pageNum) => this.onPageNumChange(pageNum)}/>

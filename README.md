@@ -128,6 +128,32 @@ webpack 4. 与 extract-text-webpack-plugin@next 4.0beta版
 
 boostrap栅格布局左右滚动条问题  去掉行和列中的row
 
+
+## 商品功能
+
+### 表单提交
+
+### 图片上传
+
+github 中  `react-fileupload`插件
+
+`react-fileupload`插件react版本15，兼容写法：
+拷贝源码到新建的`react-fileupload.js`中，设置 `propTypes`,
+参考: react文档，react 16 中 安装 `prop-types`插件
+
+注：`react-fileupload.js`中 事件函数 全改为 箭头函数，作用域问题
+
+`8-8 添加商品页面`
+
+### 富文本编辑器
+
+插件 `simditor` 依赖jQuery
+
+## 商品详情页功能
+
+### 商品详情展示
+
+
 `https://github.com/T-Macgrady/mmall-m`
 
 `https://www.imooc.com/article/24738`
